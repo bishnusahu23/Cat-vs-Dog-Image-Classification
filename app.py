@@ -13,7 +13,7 @@ st.sidebar.header("Upload an Image")
 file_upload = st.sidebar.file_uploader("Choose an image", type=["jpg", "png", "jpeg"])
 
 # Load model
-MODEL_PATH = r'/workspaces/Cat-vs-Dog-Image-Classification/classfier_model.pkl'
+MODEL_PATH = r'classfier_model.pkl'
 
 try:
     with open(MODEL_PATH, 'rb') as file:
