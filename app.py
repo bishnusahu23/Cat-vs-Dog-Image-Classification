@@ -5,6 +5,7 @@ import numpy as np
 import pickle
 from PIL import Image
 import gdown
+import os
 
 
 st.title("Cat & Dog Classifier")
