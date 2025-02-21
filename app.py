@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import pickle
 from PIL import Image
+import gdown
 
 
 st.title("Cat & Dog Classifier")
@@ -13,10 +14,18 @@ st.sidebar.header("Upload an Image")
 file_upload = st.sidebar.file_uploader("Choose an image", type=["jpg", "png", "jpeg"])
 
 # Load model
-MODEL_PATH = r'/workspaces/Cat-vs-Dog-Image-Classification/classfier_model.pkl'
+# Google Drive File ID
+file_id = "1yfSoc3UETySAfClBujpMZzWD0Mn5okdW"
+
+# Model filename
+model_path = "classifier_model.pkl"
+
+# Download model 
+if not os.path.exists(model_path):
+    gdown.download(f"https://drive.google.com/uc?id={file_id}", model_path, quiet=False)
 
 try:
-    with open(MODEL_PATH, 'rb') as file:
+    with open(model_path, 'rb') as file:
         model = pickle.load(file)
 except Exception as e:
     st.sidebar.error(f"Model loading error: {e}")
