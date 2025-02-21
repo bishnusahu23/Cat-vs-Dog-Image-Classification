@@ -6,3 +6,4 @@ streamlit
 tensorflow
 keras
 opencv-python-headless
+Pillow
