@@ -5,4 +5,4 @@ seaborn
 streamlit
 tensorflow
 keras
-opencv-python
+opencv-python-headless
