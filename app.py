@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 from PIL import Image
 
-# Page title with a fun emoji
+
 st.title("Cat & Dog Classifier")
 
 # Sidebar for image upload
@@ -13,7 +13,7 @@ st.sidebar.header("Upload an Image")
 file_upload = st.sidebar.file_uploader("Choose an image", type=["jpg", "png", "jpeg"])
 
 # Load model
-MODEL_PATH = r'C:\Users\sahub\PycharmProjects\Cat-vs-Dog-Image-Classification\classfier_model'
+MODEL_PATH = r'/workspaces/Cat-vs-Dog-Image-Classification/classfier_model'
 
 try:
     with open(MODEL_PATH, 'rb') as file:
@@ -35,7 +35,7 @@ if file_upload:
     # Predict button
     if st.sidebar.button("Predict"):
         with st.spinner("⏳ Making Prediction..."):
-            prediction_prob = model.predict(img)[0][0]  # Assuming binary classification
+            prediction_prob = model.predict(img)[0][0]  
             prediction = "Dog" if prediction_prob > 0.5 else "Cat"
             confidence = round(prediction_prob * 100, 2) if prediction_prob > 0.5 else round((1 - prediction_prob) * 100, 2)
 
@@ -43,7 +43,6 @@ if file_upload:
         st.subheader(f"Model Prediction: **{prediction}**")
         st.success(f"Confidence: {confidence}%")
 
-        # Fun message
         if prediction == "Dog":
 
             st.info("Woof woof! Looks like a dog!")
@@ -51,6 +50,5 @@ if file_upload:
 
             st.info("Meow! That's a cat!")
 
-# Footer
 st.markdown("---")
 st.markdown("👨‍💻 Developed by Bishnu sahu| Powered by Streamlit")
