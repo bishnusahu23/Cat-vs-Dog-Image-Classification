@@ -3,7 +3,7 @@ import pandas as pd
 import cv2
 import numpy as np
 import pickle
-from PIL import Image
+
 
 
 st.title("Cat & Dog Classifier")
