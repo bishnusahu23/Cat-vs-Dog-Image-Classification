@@ -10,6 +10,7 @@ st.title("Cat & Dog Classifier")
 
 # Sidebar for image upload
 st.sidebar.header("Upload an Image")
+st.markdown("**Open the sidebar to upload a chat file and start analysis.**")
 file_upload = st.sidebar.file_uploader("Choose an image", type=["jpg", "png", "jpeg"])
 
 # Load model
