@@ -63,4 +63,3 @@ if file_upload:
             st.info("Meow! That's a cat!")
 
 st.markdown("---")
-st.markdown("👨‍💻 Developed by Bishnu sahu| Powered by Streamlit")
